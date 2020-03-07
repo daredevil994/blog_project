@@ -1,0 +1,16 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+
+<div class="jumbotron">
+  
+  <label for="profile_pic">Profile Picture</label>
+  <img id="profile_pic" src="{{}}" alt="Profile Picture">
+  <h3>Username: {{ user_name }}</h3>
+  <h3>Sex : {{ sex }}</h3>
+  <h3>Email : {{ email }}</h3>
+  <h3>Quote : </h3>
+  {{ quotes }}
+  <h2>Gllery</h2>
+
+</div>
+{% endblock %}

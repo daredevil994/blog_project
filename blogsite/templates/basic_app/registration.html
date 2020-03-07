@@ -1,0 +1,27 @@
+{% extends 'basic_app/base.html' %}
+
+{% load staticfiles %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+
+  {% if registered %}
+  <h1>Thank You For Your Registration</h1>
+  {% else %}
+  <h1>Register Here!!</h1>
+  <br>
+  <h3>Fill out the form:</h3>
+  <br>
+  <form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{user_form.as_p}}
+  <input type="radio" name="gender" value="male" checked> Male <br>
+  <input type="radio" name="gender" value="female"> Female <br>
+  <input type="radio" name="gender" value="other"> Other <br>
+  {{profile_form.as_p}}
+  <input class='btn btn-primary' type="submit" name="" value="Resgister ">
+  {% endif %}
+</div>
+
+{% endblock %}
